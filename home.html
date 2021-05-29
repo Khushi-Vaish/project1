@@ -1,57 +1,333 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Home Page</title>
-		<link rel="stylesheet" href="home.css">
-		<link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-	    <style>
-			.nav-item:hover
-			{
-				background-color: rgba(0, 0, 255, 0.041);
-			}
-		</style>
-	</head>
-	<body>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<div class="container-fluid">
-			  <a class="navbar-brand" href="#"><b><i style="font-size:12px" class="fas fa-book-reader"></i>Library</b></a>
-			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+<head>
+	<title>Home Page</title>
+	<link rel="stylesheet" href="home.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		.container-fluid {
+			position: fixed;
+			/*overflow: hidden;*/
+			top: 0pc;
+			width: 100%;
+			padding: 0 0 50 0px;
+		}
+
+		.first-content {
+			background-image: url(lib1.jpg);
+			background-repeat: no-repeat;
+			background-size: auto;
+			background-position: bottom;
+			background-attachment: scroll;
+			width: 100%;
+			height: 600px;
+			/*opacity: 0.5;*/
+			padding: 90px;
+			top: 0pc;
+		}
+
+
+		.nav-item:hover {
+			background-color: rgb(228, 218, 218);
+		}
+
+		.flip-box {
+			background-color: transparent;
+			width: 300px;
+			height: 200px;
+			border: 1px solid #f1f1f1;
+			perspective: 1000px;
+			/* Remove this if you don't want the 3D effect */
+		}
+
+		/* This container is needed to position the front and back side */
+		.flip-box-inner {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			transition: transform 0.8s;
+			transform-style: preserve-3d;
+		}
+
+		/* Do an horizontal flip when you move the mouse over the flip box container */
+		.flip-box:hover .flip-box-inner {
+			transform: rotateY(180deg);
+		}
+
+		/* Position the front and back side */
+		.flip-box-front,
+		.flip-box-back {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			-webkit-backface-visibility: hidden;
+			/* Safari */
+			backface-visibility: hidden;
+		}
+
+		/* Style the front side (fallback if image is missing) */
+		.flip-box-front {
+			background-color: rgb(24, 23, 23);
+			color: black;
+		}
+
+		/* Style the back side */
+		.flip-box-back {
+			background-color: rgb(217, 236, 145);
+			color: white;
+			transform: rotateY(180deg);
+		}
+
+		.first_content_gridbox {
+			display: grid;
+			grid-template-columns: auto auto auto;
+			column-gap: 20px;
+			margin: 20px;
+			padding-left: 85px;
+			row-gap: 50px;
+		}
+
+		.btn btn-danger {
+			align-items: center;
+		}
+
+		.first_content_gridbox {
+			display: grid;
+			grid-template-columns: 2;
+
+		}
+	</style>
+</head>
+
+<body>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+		crossorigin="anonymous"></script>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand"><b><i style="font: 24px;" class="fas fa-book-reader"></i>Online
+					Library</b></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
-			  </button>
-			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				  <li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="#">Home</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="#">About project</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="#">Gallery</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="#">Contact Us</a>
-				  </li>
-				  <li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					Login
-					</a>
-					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-					  <li><a class="dropdown-item" href="#">Sign up</a></li>
-					  <li><a class="dropdown-item" href="#">Sign in</a></li>				
-					</ul>
-				  </li>
-				  
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="#"><i
+								style="font-family: Georgia, 'Times New Roman', Times, serif; color: black; font-size: 20px;">Home</i></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"><i
+								style="font-family: Georgia, 'Times New Roman', Times, serif; color: black; font-size: 20px;">About
+								project</i></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"><i
+								style="font-family: Georgia, 'Times New Roman', Times, serif; color: black; font-size: 20px;">Gallery</i></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#about"><i
+								style="font-family: Georgia, 'Times New Roman', Times, serif; color: black; font-size: 20px;">Contact
+								Us</i></a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">
+							<i
+								style="font-family: Georgia, 'Times New Roman', Times, serif; color: black; font-size: 20px;">Login</i></a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="#">Sign up</a></li>
+							<li><a class="dropdown-item" href="#">Sign in</a></li>
+						</ul>
+					</li>
 				</ul>
 				<form class="d-flex">
-				  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-				  <button class="btn btn-outline-success" type="submit">Search</button>
-				</form>
-			  </div>
+					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success" type="submit"><b><i
+								style="color: black;">Search</i></b></button>
+				</form><br>
 			</div>
-		  </nav>
-	</body>
+	</nav>
+	<div class="first-content" style="background-color: lightcyan;">
+		<div class="layer">
+			<div class="first_content_flexbox">
+				<div class="first_content_pane1">
+					<div class="testing1" style="color: rgb(22, 21, 20);">A online library management is a project
+						that manages and stores books information electronically according to students needs. The
+						system helps both students and library manager to keep a constant track of all the books
+						available in the library. It allows both the admin and the student to search for the desired
+						book. It becomes necessary for colleges to keep a continuous check on the books issued and
+						returned and even calculate fine.</div><br><br>
+					<div class="testing2"><i style="color: black;">Online Library Management System is a system which
+							maintains the information
+							about the books present in the library, their authors, the members of library to
+							whom books are issued, library staff and all. This is very difficult to organize
+							manually. Maintenance of all this information manually is a very complex task.
+							Owing to the advancement of technology, organization of an Online Library
+							becomes much simple.</i>
+					</div><br><br>
+				</div>
+				<div class="first_content_pane2">
+					<div class="testing3"><i style="color: black;">The Online Library Management has been designed to
+							computerize and automate the operations performed over the information about the
+							members, book issues and returns and all other operations. This computerization of
+							library helps in many instances of its maintenances. It reduces the workload of
+							management as most of the manual work done is reduced</i></div>
+				</div><br><br>
+			</div>
+		</div>
+	</div><br><br>
+	<h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: center;"><i>TOP BOOKS</i></h1>
+	<div class="first_content_gridbox">
+		<div class="flip-box">
+			<div class="flip-box-inner">
+				<div class="flip-box-front">
+					<img src="book1.jpg" alt="Paris" style="width: fit-content;">
+				</div>
+				<div class="flip-box-back">
+					<h2>Paris</h2>
+					<p>What an amazing city</p>
+				</div>
+			</div>
+		</div>
+		<div class="flip-box">
+			<div class="flip-box-inner">
+				<div class="flip-box-front">
+					<img src="book2.jpg" alt="Paris" style="width:126px" ;>
+				</div>
+				<div class="flip-box-back">
+					<h2>Paris</h2>
+					<p>What an amazing city</p>
+				</div>
+			</div>
+		</div>
+		<div class="flip-box">
+			<div class="flip-box-inner">
+				<div class="flip-box-front">
+					<img src="book3.jpg" alt="Paris" style="width: 128px;">
+				</div>
+				<div class="flip-box-back">
+					<h2>Paris</h2>
+					<p>What an amazing city</p>
+				</div>
+			</div>
+		</div>
+		<div class="flip-box">
+			<div class="flip-box-inner">
+				<div class="flip-box-front">
+					<img src="book4.jpg" alt="Paris" style="width:126px" ;>
+				</div>
+				<div class="flip-box-back">
+					<h2>Paris</h2>
+					<p>What an amazing city</p>
+				</div>
+			</div>
+		</div>
+		<div class="flip-box">
+			<div class="flip-box-inner">
+				<div class="flip-box-front">
+					<img src="book5.jpg" alt="Paris" style="width:128px" ;>
+				</div>
+				<div class="flip-box-back">
+					<h2>Paris</h2>
+					<p>What an amazing city</p>
+				</div>
+			</div>
+		</div>
+		<div class="flip-box">
+			<div class="flip-box-inner">
+				<div class="flip-box-front">
+					<img src="book6.jpg" alt="Paris" style="width:128px" ;>
+				</div>
+				<div class="flip-box-back" style="text-align: center; padding-top: 50px; color: black;">
+					<h2>Author</h2>
+					<p>Dennis Kelly</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Button trigger modal -->
+	<div class="text-center">
+		<button type="button" class="btn btn-danger btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+			Read
+		</button>
+	</div>
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalLabel"><b
+							style="color: red; font-family: Georgia, 'Times New Roman', Times, serif;">Sorry</b></h4>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					you have to login to read the books.
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Login</button>
+				</div>
+			</div>
+		</div>
+	</div><br><br>
+	<h1 style="font-family: cursive; color: black;font: xx-large; text-align: center;">Other Books</h1>
+	<div class="first_content_gridbox">
+		<div class="card mb-2" style="max-width: 540px;">
+			<div class="row g-0">
+				<div class="col-md-4">
+					<img src="book4.jpg" alt="hc">
+				</div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+							additional content. This content is a little bit longer.</p>
+						<p class="card-text"><a class="text-muted" href="www.google.com">Read</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-2" style="max-width: 540px;">
+			<div class="row g-0">
+				<div class="col-md-4">
+					<img src="..." alt="...">
+				</div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+							additional content. This content is a little bit longer.</p>
+						<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-3" style="max-width: 540px;">
+			<div class="row g-0">
+				<div class="col-md-4">
+					<img src="book4.jpg" alt="hc">
+				</div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+							additional content. This content is a little bit longer.</p>
+						<p class="card-text"><a class="text-muted" href="www.google.com">Read</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
 
-	
+</html>
