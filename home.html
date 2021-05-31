@@ -35,7 +35,95 @@
 
 
 		.nav-item:hover {
-			background-color: rgb(228, 218, 218);
+			background-color: rgb(231, 227, 227);
+		}
+
+		.slideshow {
+			font-family: Helvetica, sans-serif;
+			padding: 5%;
+			text-align: center;
+			font-size: 50;
+
+		}
+
+		/* Styling the area of the slides */
+		#slideshow {
+			overflow: hidden;
+			height: 510px;
+			width: 728px;
+			margin: 0 auto;
+		}
+
+		/* Style each of the sides 
+      with a fixed width and height */
+		.slide {
+			float: left;
+			height: 510px;
+			width: 728px;
+		}
+
+		/* Add animation to the slides */
+		.slide-wrapper {
+			/* Calculate the total width on the
+        basis of number of slides */
+			width: calc(728px * 4);
+
+			/* Specify the animation with the
+        duration and speed */
+			animation: slide 10s ease infinite;
+		}
+
+		/* Set the background color
+      of each of the slides */
+		.slide:nth-child(1) {
+			background-image: url(H1.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			opacity: .7;
+		}
+
+		.slide:nth-child(2) {
+			background-image: url(h7.jpeg);
+			background-position: center;
+			background-size: cover;
+			opacity: .8;
+		}
+
+		.slide:nth-child(3) {
+			background-image: url(h6.jpg);
+		}
+
+		.slide:nth-child(4) {
+			background-image: url(h4.jpg);
+			background-size: cover;
+		}
+
+		/* Define the animation 
+      for the slideshow */
+		@keyframes slide {
+
+			/* Calculate the margin-left for 
+        each of the slides */
+			10% {
+				margin-left: 0px;
+			}
+
+			40% {
+				margin-left: calc(-728px * 1);
+			}
+
+			60% {
+				margin-left: calc(-728px * 2);
+			}
+
+			80% {
+				margin-left: calc(-728px * 3);
+			}
+		}
+
+		.top {
+			background-image: url(top1.jpg);
+			image-resolution: 2;
 		}
 
 		.flip-box {
@@ -101,9 +189,64 @@
 
 		.first_content_gridbox {
 			display: grid;
-			grid-template-columns: 2;
+
 
 		}
+
+		.back {
+			background-color: bisque
+		}
+		.footer1
+{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #1d2a4d;
+    color: rgb(250, 249, 249);
+    margin-top: 40px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+  }
+  .box1
+  {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+  }
+  .box2
+  {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  .contactbox
+  {
+    background: rgb(250, 250, 250);
+    display: flex;
+    flex-grow: 1;
+    color: black;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 30px;
+  }
+  .grid
+{
+    display: flex;
+    flex-direction: row;
+}
+  .footer2
+  {
+      padding: 30px;
+  }
 	</style>
 </head>
 
@@ -111,156 +254,162 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
 		crossorigin="anonymous"></script>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<div class="container-fluid">
-			<a class="navbar-brand"><b><i style="font: 24px;" class="fas fa-book-reader"></i>Online
-					Library</b></a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#"><i
-								style="font-family: Georgia, 'Times New Roman', Times, serif; color: black; font-size: 20px;">Home</i></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#"><i
-								style="font-family: Georgia, 'Times New Roman', Times, serif; color: black; font-size: 20px;">About
-								project</i></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#"><i
-								style="font-family: Georgia, 'Times New Roman', Times, serif; color: black; font-size: 20px;">Gallery</i></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#about"><i
-								style="font-family: Georgia, 'Times New Roman', Times, serif; color: black; font-size: 20px;">Contact
-								Us</i></a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false">
-							<i
-								style="font-family: Georgia, 'Times New Roman', Times, serif; color: black; font-size: 20px;">Login</i></a>
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#">Sign up</a></li>
-							<li><a class="dropdown-item" href="#">Sign in</a></li>
-						</ul>
-					</li>
-				</ul>
-				<form class="d-flex">
-					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success" type="submit"><b><i
-								style="color: black;">Search</i></b></button>
-				</form><br>
-			</div>
-	</nav>
-	<div class="first-content" style="background-color: lightcyan;">
-		<div class="layer">
-			<div class="first_content_flexbox">
-				<div class="first_content_pane1">
-					<div class="testing1" style="color: rgb(22, 21, 20);">A online library management is a project
-						that manages and stores books information electronically according to students needs. The
-						system helps both students and library manager to keep a constant track of all the books
-						available in the library. It allows both the admin and the student to search for the desired
-						book. It becomes necessary for colleges to keep a continuous check on the books issued and
-						returned and even calculate fine.</div><br><br>
-					<div class="testing2"><i style="color: black;">Online Library Management System is a system which
-							maintains the information
-							about the books present in the library, their authors, the members of library to
-							whom books are issued, library staff and all. This is very difficult to organize
-							manually. Maintenance of all this information manually is a very complex task.
-							Owing to the advancement of technology, organization of an Online Library
-							becomes much simple.</i>
-					</div><br><br>
+	<div class="back">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand"><b><i style="font: 24px;" class="fas fa-book-reader"></i>Online
+						Library</b></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#"><i
+									style="font-family: Georgia, 'Times New Roman', Times, serif; color: black; font-size: 20px;">Home</i></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#"><i
+									style="font-family: Georgia, 'Times New Roman', Times, serif; color: black; font-size: 20px;">About
+									project</i></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#"><i
+									style="font-family: Georgia, 'Times New Roman', Times, serif; color: black; font-size: 20px;">Gallery</i></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#about"><i
+									style="font-family: Georgia, 'Times New Roman', Times, serif; color: black; font-size: 20px;">Contact
+									Us</i></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="http://127.0.0.1:5500/login.html"><i
+									style="font-family: Georgia, 'Times New Roman', Times, serif; color: black; font-size: 20px;">Login
+									</i></a>
+					</ul>
+					<form class="d-flex">
+						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success" type="submit"><b><i
+									style="color: black;">Search</i></b></button>
+					</form><br>
 				</div>
-				<div class="first_content_pane2">
-					<div class="testing3"><i style="color: black;">The Online Library Management has been designed to
-							computerize and automate the operations performed over the information about the
-							members, book issues and returns and all other operations. This computerization of
-							library helps in many instances of its maintenances. It reduces the workload of
-							management as most of the manual work done is reduced</i></div>
-				</div><br><br>
-			</div>
-		</div>
-	</div><br><br>
-	<h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: center;"><i>TOP BOOKS</i></h1>
-	<div class="first_content_gridbox">
-		<div class="flip-box">
-			<div class="flip-box-inner">
-				<div class="flip-box-front">
-					<img src="book1.jpg" alt="Paris" style="width: fit-content;">
+		</nav><br><br>
+		<!-- Define the slideshow container -->
+
+		<div id="slideshow">
+			<div class="slide-wrapper">
+
+				<!-- Define each of the slides
+         and write the content -->
+				<div class="slide">
+					<h1 class="slide-number" style="text-align: center;"><i style="color: black;">
+							Welcome To Our Online Library </i>
+					</h1>
 				</div>
-				<div class="flip-box-back">
-					<h2>Paris</h2>
-					<p>What an amazing city</p>
+				<div class="slide">
+					<h1 class="slide-number"><i
+							style="text-align: center; shape-outside: initial; font-size: 24px; padding-top: 40px; color:black;"><br><br>
+							“Sometimes, you read a book and it fills you with this weird evangelical zeal, and you
+							become
+							convinced that the shattered world will never be put back together unless and until all
+							living
+							humans read the book.”</i>
+					</h1>
+				</div>
+				<div class="slide">
+					<h1 class="slide-number"><i style="color: blanchedalmond;padding-left: 30px;">
+							Can we guess your genre?</i>
+					</h1>
+				</div>
+				<div class="slide">
+					<h1 class="slide-number"><i style="color: rgb(21, 23, 24); padding-left: 40px;font-size: 30px;">
+							<br<br><br><br><br><br>
+								To build up a library is to create a life. It’s never just a random collection of books.
+						</i>
+					</h1>
 				</div>
 			</div>
 		</div>
-		<div class="flip-box">
-			<div class="flip-box-inner">
-				<div class="flip-box-front">
-					<img src="book2.jpg" alt="Paris" style="width:126px" ;>
-				</div>
-				<div class="flip-box-back">
-					<h2>Paris</h2>
-					<p>What an amazing city</p>
-				</div>
-			</div>
-		</div>
-		<div class="flip-box">
-			<div class="flip-box-inner">
-				<div class="flip-box-front">
-					<img src="book3.jpg" alt="Paris" style="width: 128px;">
-				</div>
-				<div class="flip-box-back">
-					<h2>Paris</h2>
-					<p>What an amazing city</p>
-				</div>
-			</div>
-		</div>
-		<div class="flip-box">
-			<div class="flip-box-inner">
-				<div class="flip-box-front">
-					<img src="book4.jpg" alt="Paris" style="width:126px" ;>
-				</div>
-				<div class="flip-box-back">
-					<h2>Paris</h2>
-					<p>What an amazing city</p>
-				</div>
-			</div>
-		</div>
-		<div class="flip-box">
-			<div class="flip-box-inner">
-				<div class="flip-box-front">
-					<img src="book5.jpg" alt="Paris" style="width:128px" ;>
-				</div>
-				<div class="flip-box-back">
-					<h2>Paris</h2>
-					<p>What an amazing city</p>
-				</div>
-			</div>
-		</div>
-		<div class="flip-box">
-			<div class="flip-box-inner">
-				<div class="flip-box-front">
-					<img src="book6.jpg" alt="Paris" style="width:128px" ;>
-				</div>
-				<div class="flip-box-back" style="text-align: center; padding-top: 50px; color: black;">
-					<h2>Author</h2>
-					<p>Dennis Kelly</p>
-				</div>
-			</div>
-		</div>
+		<br><br><br>
 	</div>
-	<!-- Button trigger modal -->
-	<div class="text-center">
-		<button type="button" class="btn btn-danger btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
-			Read
-		</button>
+	<div class="top">
+		<h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: center;"><i>TOP BOOKS</i></h1>
+		<div class="first_content_gridbox">
+			<div class="flip-box">
+				<div class="flip-box-inner">
+					<div class="flip-box-front">
+						<img src="book1.jpg" alt="Paris" style="width: fit-content;">
+					</div>
+					<div class="flip-box-back">
+						<h2>Paris</h2>
+						<p>What an amazing city</p>
+					</div>
+				</div>
+			</div>
+			<div class="flip-box">
+				<div class="flip-box-inner">
+					<div class="flip-box-front">
+						<img src="book2.jpg" alt="Paris" style="width:126px" ;>
+					</div>
+					<div class="flip-box-back">
+						<h2>Paris</h2>
+						<p>What an amazing city</p>
+					</div>
+				</div>
+			</div>
+			<div class="flip-box">
+				<div class="flip-box-inner">
+					<div class="flip-box-front">
+						<img src="book3.jpg" alt="Paris" style="width: 128px;">
+					</div>
+					<div class="flip-box-back">
+						<h2>Paris</h2>
+						<p>What an amazing city</p>
+					</div>
+				</div>
+			</div>
+			<div class="flip-box">
+				<div class="flip-box-inner">
+					<div class="flip-box-front" style="width: 80px;">
+						<img src="book4.jpg" alt="Paris" style="width:306px; height: 200px;">
+					</div>
+					<div class="flip-box-back">
+						<h2>Paris</h2>
+						<p>What an amazing city</p>
+					</div>
+				</div>
+			</div>
+			<div class="flip-box" style="height: 300px;width:260px;">
+				<div class="flip-box-inner">
+					<div class="flip-box-front">
+						<img src="book5.jpg" alt="Paris" style="width:260px; height: 300px;">
+					</div>
+					<div class="flip-box-back">
+						<h2>Paris</h2>
+						<p>What an amazing city</p>
+					</div>
+				</div>
+			</div>
+			<div class="flip-box" style="height: 300px;width:260px;">
+				<div class="flip-box-inner">
+					<div class="flip-box-front">
+						<img src="book6.jpg" alt="Paris" style="width:260px; height: 300px;">
+					</div>
+					<div class="flip-box-back" style="text-align: center; padding-top: 50px; color: black;">
+						<h2>Author</h2>
+						<p>Dennis Kelly</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Button trigger modal -->
+		<div class="text-center">
+			<button type="button" class="btn btn-danger btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+				Read
+			</button>
+		</div>
 	</div>
 	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -275,28 +424,14 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Login</button>
+					<button type="button" class="btn btn-primary"><a href="http://127.0.0.1:5500/login.html" style="text-decoration:solid;color: white;">Login</a></button>
 				</div>
 			</div>
 		</div>
 	</div><br><br>
 	<h1 style="font-family: cursive; color: black;font: xx-large; text-align: center;">Other Books</h1>
 	<div class="first_content_gridbox">
-		<div class="card mb-2" style="max-width: 540px;">
-			<div class="row g-0">
-				<div class="col-md-4">
-					<img src="book4.jpg" alt="hc">
-				</div>
-				<div class="col-md-8">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-							additional content. This content is a little bit longer.</p>
-						<p class="card-text"><a class="text-muted" href="www.google.com">Read</a></p>
-					</div>
-				</div>
-			</div>
-		</div>
+
 		<div class="card mb-2" style="max-width: 540px;">
 			<div class="row g-0">
 				<div class="col-md-4">
@@ -326,6 +461,79 @@
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+	<div class="first-content" style="background-color: lightcyan;">
+		<div class="layer">
+			<div class="first_content_flexbox">
+				<div class="first_content_pane1">
+					<div class="testing1" style="color: rgb(22, 21, 20);">A online library management is a project
+						that manages and stores books information electronically according to students needs. The
+						system helps both students and library manager to keep a constant track of all the books
+						available in the library. It allows both the admin and the student to search for the desired
+						book. It becomes necessary for colleges to keep a continuous check on the books issued and
+						returned and even calculate fine.</div><br><br>
+					<div class="testing2"><i style="color: black;">Online Library Management System is a system which
+							maintains the information
+							about the books present in the library, their authors, the members of library to
+							whom books are issued, library staff and all. This is very difficult to organize
+							manually. Maintenance of all this information manually is a very complex task.
+							Owing to the advancement of technology, organization of an Online Library
+							becomes much simple.</i>
+					</div><br><br>
+				</div>
+				<div class="first_content_pane2">
+					<div class="testing3"><i style="color: black;">The Online Library Management has been designed to
+							computerize and automate the operations performed over the information about the
+							members, book issues and returns and all other operations. This computerization of
+							library helps in many instances of its maintenances. It reduces the workload of
+							management as most of the manual work done is reduced</i></div>
+				</div><br><br>
+			</div>
+		</div>
+	</div><br><br>
+				<div class="socialiconpanel"><br><br>
+				<div class="social_icons"><i style="font-size:24px" class="fa">&#xf082;</i></div>
+				<div class="social_icons"><i style="font-size:24px" class="fa">&#xf16d;</i></div>
+				<div class="social_icons"><i style="font-size:24px" class="fa">&#xf081;</i></div>
+				<div class="social_icons"><i style="font-size:24px" class="fa">&#xf0d4;</i></div>
+				<div class="social_icons"><i style="font-size:24px" class="fa">&#xf08c;</i></div>
+			</div>
+	<div class="footer1">
+		<div class="box1">
+			<div class="heading1"><b><i style="font-size:24px" class="fa">&#xf21e;</i> Medcity</b></div><br>
+			<div class="content1" style="font-family: 'Times New Roman', Times, serif;">Our goal is to deliver quality
+				service.</div>
+			<a class="link1" href="#" style="text-decoration: solid;">Make Appointment</a>
+		</div>
+		<div class="box2">
+			<div class="heading2"><b>Departments</b></div>
+			<div class="link2">Neurology Clinic</div>
+			<div class="link2">Pathologylogy Clinic</div>
+			<div class="link2">Cardiology Clinic</div>
+		</div>
+		<div class="box2">
+			<div class="heading2"><b>Links</b></div>
+			<a class="link2" href="#" style="text-decoration: solid;">About us</a>
+			<a class="link2" href="#" style="text-decoration: solid;">Our Clinic Clinic</a>
+			<a class="link2" href="#" style="text-decoration: solid;">Our Doctors</a>
+		</div>
+		<div class="contactbox">
+			<div class="heading3" style="text-decoration: underline;">Quick Contacts</div>
+			<div class="content2">If you have any questions or need help, feel free to contact with our team.</div>
+			<div class="link3">+91 9628709438</div>
+			<div class="content2">2307 Beverly Rd Brooklyn, New York 11226 United States.</div>
+			<a class="link1" href="#" style="text-decoration: wavy; color: rgb(15, 9, 1);">Get directions</a>
+			<div class="grid">
+				<div class="social_icons"><i style="font-size:24px" class="fa">&#xf082;</i></div>
+				<div class="social_icons"><i style="font-size:24px" class="fa">&#xf16d;</i></div>
+				<div class="social_icons"><i style="font-size:24px" class="fa">&#xf081;</i></div>
+			</div>
+		</div>
+	</div>
+	<div class="footer2">
+		<div class="link2" id="footerlast">2021 DataSoft, All Rights Reserved,
+			<a href="#" id="last"> With Love by 7oroof.com</a>
 		</div>
 	</div>
 </body>
