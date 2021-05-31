@@ -18,6 +18,21 @@
             flex-direction: row;
             padding: 29px;
         }
+        button {
+  background-color: #39af39;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  border-radius: 20px;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -43,7 +58,7 @@
                                     <label for="f">Password</label><br>
                                     <input type="text" id="f" name="pass"><br><br>
                                     <a href="#" style="text-decoration: solid;padding: 0;">Forgot Password?</a><br><br>
-                                    <input type="submit" value="Submit"><br><br>
+                                    <button type="button" class="cancelbtn"><a href="http://127.0.0.1:5500/home.html" style="text-decoration: solid;font-size: 18px;color:black; border-radius: 20px;"><b>Submit</b></a></button>
                                     <p>Not a member? <a href="http://127.0.0.1:5500/signup.html">Sign Up Now</a></b></p>
                                     <h5>Or Login With</h5>
 
