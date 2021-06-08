@@ -110,8 +110,10 @@ each of the slides */
 }
 
 .top {
-    background-image: url(top1.jpg);
-    image-resolution: 2;
+    background-image: url(top.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .flip-box {
@@ -165,10 +167,10 @@ each of the slides */
 .first_content_gridbox {
     display: grid;
     grid-template-columns: auto auto auto;
-    column-gap: 20px;
+    column-gap: 30px;
     margin: 20px;
-    padding-left: 85px;
-    row-gap: 50px;
+    padding-left: 110px;
+    row-gap: 60px;
 }
 
 .btn btn-danger {

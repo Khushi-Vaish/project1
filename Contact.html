@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ContactUs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }*/
+
+        .all {
+            background-color: rgba(165, 42, 42, 0.637);
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact-parent {
+            background: rgb(240, 238, 238);
+            display: flex;
+            margin: 0;
+        }
+
+        .contact-child {
+            display: flex;
+            flex: 1;
+            box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.75);
+        }
+
+        .child1 {
+           background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(q.jpg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            color: #fff;
+            padding: 100px, 0;
+        }
+
+        .child1 p {
+            padding-left: 20%;
+            font-size: 20px;
+            text-shadow: 0px 0px 2px #000;
+        }
+
+        .child1 p span {
+            font-size: 16px;
+            color: #9df2fd;
+        }
+
+        .child2 {
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            background-color: aliceblue;
+        }
+
+        .inside-contact {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .inside-contact h2 {
+            text-transform: uppercase;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .inside-contact h3 {
+            text-align: center;
+            font-size: 16px;
+            color: #0085e2;
+        }
+
+        .inside-contact input,
+        .inside-contact textarea {
+            width: 100%;
+            background-color: #eee;
+            border: 1px solid rgba(0, 0, 0, 0.48);
+            padding: 5px 10px;
+            margin-bottom: 20px;
+        }
+
+        .inside-contact input[type=submit] {
+            background-color:rgb(27, 172, 27);
+            color: #fff;
+            transition: 0.2s;
+            border: 2px solid transparent;
+            margin: 30px 0;
+        }
+
+        .inside-contact input[type=submit]:hover {
+            background-color: #fff;
+            color:rgb(28, 173, 28);
+            transition: 0.2s;
+        }
+
+        @media screen and (max-width:991px) {
+            .contact-parent {
+                display: block;
+                width: 100%;
+            }
+
+            .child1 {
+                display: none;
+            }
+
+           .child2 {
+                background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("q.jpg");
+                background-size: cover;
+            }
+
+            .inside-contact input,
+            .inside-contact textarea {
+                background-color: #fff;
+            }
+        }
+        iframe
+  {
+    border: 0;
+    width: 100%;
+    height: 500px;
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+  }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <h1 style="text-align: center;">Contact Details</h1><br>
+        <div class="container">
+            <div class="contact-parent">
+                <div class="contact-child child1">
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i> Address <br />
+                        <span>Grow Up Everyday
+                            <br />
+                            Lucknow,India
+                        </span>
+                    </p>
+                    <p>
+                        <i class="fas fa-phone-alt"></i> Let's Talk <br />
+                        <span>9628709410</span>
+                    </p>
+                    <p>
+                        <i class=" far fa-envelope"></i>Email Address<br />
+                        <span>abc@google.com</span>
+                    </p>
+                </div>
+                <div class="contact-child child2">
+                    <div class="inside-contact">
+                        <h2>Contact Us</h2>
+                        <h3>
+                            <span id="confirm">
+                        </h3>
+                        <p>Name *</p>
+                        <input id="txt_name" type="text" Required="required">
+                        <p>Email *</p>
+                        <input id="txt_email" type="text" Required="required">
+                        <p>Phone *</p>
+                        <input id="txt_phone" type="text" Required="required">
+                        <p>Subject *</p>
+                        <input id="txt_subject" type="text" Required="required">
+                        <p>Message *</p>
+                        <textarea id="txt_message" rows="4" cols="20" Required="required"></textarea>
+                        <input type="submit" id="btn_send" value="SEND">
+                    </div>
+                </div>
+            </div>
+        </div><br><br>
+        <div class="content">
+			<div class="contentheading" style="text-align: center;"><h2>Headquaters</h2></div><br>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59543.62633866343!2d82.74391407910156!3d21.133421400000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfb746c365333%3A0xd5111c00634ccb6a!2sTHESIS%20E%20-%20LIBRARY!5e0!3m2!1sen!2sin!4v1623147086314!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</body>
+</html>
