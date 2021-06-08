@@ -164,7 +164,7 @@ each of the slides */
 
 /* Style the back side */
 .flip-box-back {
-    background-color: rgb(217, 236, 145);
+    background-color:burlywood;
     color: white;
     transform: rotateY(180deg);
 }
