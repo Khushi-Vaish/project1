@@ -3,9 +3,10 @@ html
  {
     position: fixed;
     /*overflow: hidden;*/
+    margin: auto;
     top: 0pc;
     width: 100%;
-    padding: 0 0 50 0px;
+    padding: 0 0 0 0px;
 }
 .all
 {
@@ -42,8 +43,8 @@ top: 0%;
 /* Styling the area of the slides */
 #slideshow {
     overflow: hidden;
-    height: 510px;
-    width: 728px;
+    height: 40em;
+    width: 46em;
     margin: 0 auto;
 }
 
